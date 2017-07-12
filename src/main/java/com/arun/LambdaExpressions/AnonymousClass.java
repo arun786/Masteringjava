@@ -17,10 +17,17 @@ public class AnonymousClass {
         String upperCaseEmployee = doStringStuff(new upperCase() {
             @Override
             public String toUpperCase(String s1, String s2) {
-                return s1.toUpperCase() + s2.toUpperCase();
+                return s1.toUpperCase() + ":" + s2.toUpperCase();
             }
         }, employees.get(0).getName(), employees.get(0).getName());
         System.out.println(upperCaseEmployee);
+
+        /*In java 8*/
+
+        upperCase uc = (s1,s2) -> s1.toUpperCase() + ":" + s2.toUpperCase();
+        String java8upperCase = doStringStuff(uc, employees.get(0).getName(),employees.get(0).getName());
+        System.out.println(java8upperCase);
+
     }
 
     public static String doStringStuff(upperCase uc, String s1, String s2) {
