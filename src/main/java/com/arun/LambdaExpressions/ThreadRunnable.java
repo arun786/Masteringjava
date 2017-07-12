@@ -14,6 +14,11 @@ public class ThreadRunnable {
 
         /*using java 8*/
         new Thread(() -> System.out.println("Hello World using Java 8..")).start();
+
+        new Thread(() -> {
+            System.out.println("Hello World...");
+            System.out.println("Hello multiple world...");
+        }).start();
     }
 
 
