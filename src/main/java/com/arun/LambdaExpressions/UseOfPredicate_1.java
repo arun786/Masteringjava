@@ -18,14 +18,22 @@ public class UseOfPredicate_1 {
         lstPassengers.add(new Passengers("Pushpa", 32, "female"));
         lstPassengers.add(new Passengers("Sangita", 23, "female"));
 
-        CheckPassenger(lstPassengers,"Female kid below 10", isFemaleChild());
-        CheckPassenger(lstPassengers,"male kid below 10", isMaleChild());
-        CheckPassenger(lstPassengers,"Adult Male", isAdultMale());
-        CheckPassenger(lstPassengers,"Adult Female", isAdultFemale());
+        CheckPassenger(lstPassengers, "Female kid below 10", isFemaleChild());
+        CheckPassenger(lstPassengers, "male kid below 10", isMaleChild());
+        CheckPassenger(lstPassengers, "Adult Male", isAdultMale());
+        CheckPassenger(lstPassengers, "Adult Female", isAdultFemale());
+
+        /*we can use anonymous class instead of lambdas*/
+        CheckPassenger(lstPassengers, "Female kid below 10 using anonymous class", new Predicate<Passengers>() {
+            @Override
+            public boolean test(Passengers passengers) {
+                return passengers.getAge() < 10 && passengers.getGender().equalsIgnoreCase("female");
+            }
+        });
     }
 
     public static void CheckPassenger(List<Passengers> lstPassengers, String text, Predicate<Passengers> isPassengerStatus) {
-        System.out.println("*****"+text+"******");
+        System.out.println("*****" + text + "******");
         for (Passengers passenger : lstPassengers) {
             if (isPassengerStatus.test(passenger)) {
                 System.out.println(passenger.getName() + " : " + passenger.getGender() + " : " + passenger.getAge());
