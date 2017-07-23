@@ -27,7 +27,12 @@ public class ArithmeticFnction {
 
         Sub sub = (x, y) -> x - y;
 
-        Div div = (x, y) -> x / y;
+        Div div = (x, y) -> {
+            if (y == 0) {
+                return 0;
+            }
+            return x / y;
+        };
 
         System.out.println(sum.sum(10, 20, 30));
         System.out.println(mul.mul(10, 20));
