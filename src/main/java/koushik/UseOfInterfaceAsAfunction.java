@@ -17,5 +17,6 @@ public class UseOfInterfaceAsAfunction {
         };
 
         System.out.println(ath.sum(10, 20));
+        System.out.println(ath.sum(150,300));
     }
 }
