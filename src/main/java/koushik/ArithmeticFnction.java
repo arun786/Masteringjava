@@ -21,28 +21,17 @@ interface Div {
  */
 public class ArithmeticFnction {
     public static void main(String[] args) {
-        Sum sum = (x, y, z) -> {
-            return x + y + z;
-        };
+        Sum sum = (x, y, z) -> x + y + z;
 
-        Mul mul = (x, y) -> {
-            return x * y;
-        };
+        Mul mul = (x, y) -> x * y;
 
-        Sub sub = (x, y) -> {
-            return x - y;
-        };
+        Sub sub = (x, y) -> x - y;
 
-        Div div = (x, y) -> {
-            return x / y;
-        };
+        Div div = (x, y) -> x / y;
 
         System.out.println(sum.sum(10, 20, 30));
         System.out.println(mul.mul(10, 20));
         System.out.println(sub.sub(20, 10));
         System.out.println(div.div(20, 5));
-
-
     }
-
 }
