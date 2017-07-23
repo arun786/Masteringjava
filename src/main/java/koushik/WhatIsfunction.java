@@ -32,6 +32,16 @@ public class WhatIsfunction {
         greet c2 = new DGreet();
         greet(c2);
 
+        //We can use an anonymous class
+        greet g = new greet() {
+            @Override
+            public void perform() {
+                System.out.println("Hello World in anonymous class");
+            }
+        };
+
+        g.perform();
+
         //or java 8
 
         Java8Greet j8g = () -> System.out.println("Hello Java 8");
