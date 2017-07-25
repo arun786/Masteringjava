@@ -7,6 +7,8 @@ import java.util.function.Consumer;
  */
 public class UseOfConsumerFunction {
     public static void main(String[] args) {
+
+        /*Consumer interface is a functional interface which takes an object as an argument and does not return a value*/
         Consumer<String> c = p -> System.out.println(p.toUpperCase());
         c.accept("hello world");
 
